@@ -8,10 +8,11 @@ import { ButtonMenu } from "../../components/ButtonMenu/ButtonMenu";
 import { generatePassword } from "../../services/generatePassword";
 
 export const Home = () =>{
+    let passwordLength = 12;
     const [generatedPassword, setGeneratedPassword] = useState('');
 
     const handleGeneratePassword = () => {
-        let newPassword = generatePassword(12)
+        let newPassword = generatePassword(passwordLength)
         setGeneratedPassword(newPassword);
     }
     return(

@@ -6,6 +6,7 @@ import { TextField } from "../../components/TextInput/TextField";
 import { AppButton } from "../../components/AppButton/AppButton";
 import { ButtonMenu } from "../../components/ButtonMenu/ButtonMenu";
 import { generatePassword } from "../../services/generatePassword";
+import * as Clipboard from 'expo-clipboard';
 
 export const Home = () =>{
     let passwordLength = 12;
@@ -15,13 +16,21 @@ export const Home = () =>{
         let newPassword = generatePassword(passwordLength)
         setGeneratedPassword(newPassword);
     }
+
+    const handleCopyToClipboard = () => {
+        Clipboard.setStringAsync(generatedPassword);
+        console.log("copied")
+    }
     return(
         <View style={styles.container}>
             <Logo/>
             <TextField
             generatedPassword={generatedPassword}
             />
-            <ButtonMenu handleGeneratePassword = {handleGeneratePassword}/>
+            <ButtonMenu
+            handleGeneratePassword = {handleGeneratePassword}
+            handleCopyToClipboard={handleCopyToClipboard}
+            />
         </View>
         
     );

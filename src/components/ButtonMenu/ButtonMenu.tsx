@@ -5,17 +5,21 @@ import { styles } from './ButtonMenuStyles';
 import { AppButton } from '../AppButton/AppButton';
 
 interface ButtonMenuProps{
-    handleGeneratePassword?: () => void
+    handleGeneratePassword?: () => void;
+    handleCopyToClipboard?: () => void;
 }
 
-export function ButtonMenu({handleGeneratePassword}: ButtonMenuProps) {
+export function ButtonMenu({handleGeneratePassword, handleCopyToClipboard}: ButtonMenuProps) {
   return (
     <View style={styles.container}>
         <AppButton
             title="⚡GENERATE"
-            handleGeneratePassword={handleGeneratePassword}
+            handleOnPress={handleGeneratePassword}
         />
-        <AppButton title='📋 COPY'/>
+        <AppButton
+            title='📋 COPY'
+            handleOnPress={handleCopyToClipboard}    
+        />
     </View>
   );
 }

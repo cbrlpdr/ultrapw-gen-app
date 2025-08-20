@@ -5,13 +5,13 @@ import { styles } from './AppButtonStyle';
 
 interface AppButtonProps {
   title?: string;
-  handleGeneratePassword?: () => void;
+  handleOnPress?: () => void;
 }
-export const AppButton = ({title, handleGeneratePassword} :AppButtonProps) => {
+export const AppButton = ({title, handleOnPress} :AppButtonProps) => {
   return (
     <View style={styles.container}>
         <Pressable
-        onPress={handleGeneratePassword}
+        onPress={handleOnPress}
         >
             <Text style={styles.buttonText}>{title}</Text>
         </Pressable>

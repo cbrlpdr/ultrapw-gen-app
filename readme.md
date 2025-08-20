@@ -1,4 +1,3 @@
-````markdown
 # UltraPW - Gerador de Senhas
 
 UltraPW é um aplicativo mobile feito com **React Native e Expo** que gera senhas seguras de forma fácil e rápida.  
